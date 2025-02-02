@@ -4,13 +4,32 @@ import PackingList from "./PackingList";
 import Statistics from "./Statistics";
 
 function App() {
-  const items = ["Coffee", "handBags", " Cover", "Maiza", "Mac Book Air"];
+  const itemList = [
+    {
+      id: 1,
+      description: "Coffee",
+      quantity: 10,
+      packed: false,
+    },
+    {
+      id: 2,
+      description: "Mac Book Air",
+      quantity: 1,
+      packed: false,
+    },
+    {
+      id: 3,
+      description: "Hand bags",
+      quantity: 3,
+      packed: false,
+    },
+  ];
 
   return (
     <>
       <Logo />
       <Form />
-      <PackingList items={items} />
+      <PackingList itemList={itemList} />
       <Statistics />
     </>
   );
