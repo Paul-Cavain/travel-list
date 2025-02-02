@@ -2,21 +2,13 @@ const Form = () => {
   return (
     <form className="flex flex-row justify-center items-center gap-5 bg-yellow-700 py-4 w-full">
       <h3 className="text-lg">What do you need for your 🥰 trip</h3>
-      <select className="w-20 h-10 rounded-md focus:outline-none hover:bg-yellow-700 hover:text-white hover:border-2 hover:border-white transition ease-out duration-500">
-        <option value={0} selected disabled>
-          0
-        </option>
-        <option value={1}>1</option>
-        <option value={2}>2</option>
-        <option value={3}>3</option>
-        <option value={4}>4</option>
-        <option value={5}>5</option>
-        <option value={6}>6</option>
-        <option value={7}>7</option>
-        <option value={8}>8</option>
-        <option value={9}>9</option>
-        <option value={10}>10</option>
-        <option value={11}>11</option>
+
+      <select className="w-20 h-10 text-xs rounded-md focus:outline-none hover:bg-yellow-700 hover:text-white hover:border-2 hover:border-white transition ease-out duration-500">
+        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+          <option value={num} key={num}>
+            {num}
+          </option>
+        ))}
       </select>
       <input
         type="text"
